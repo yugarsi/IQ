@@ -1,0 +1,60 @@
+
+Race condition:
+Two threads trying to update(write) into the same variable
+
+When deadlocks occur --> cyclic depedency 
+
+A deadlock occurs when two threads each lock a different variable at the same time and then try to lock the variable that the other thread already locked. As a result, each thread stops executing and waits for the other thread to release the variable. Because each thread is holding the variable that the other thread wants, nothing occurs, and the threads remain deadlocked.
+
+
+What is a thread
+
+Processes are used to separate the different applications that are executing at a specified time on a single computer. 
+The operating system does not execute processes, but threads do. "A thread is a unit of execution.""
+
+The operating system allocates processor time to a thread for the execution of the thread's tasks.
+
+ A single process can contain multiple threads of execution. Each thread maintains its own exception handlers, scheduling priorities, and a set of structures that the operating system uses to save the thread's context if the thread cannot complete its execution during the time that it was assigned to the processor. The context is held until the next time that the thread receives processor time. The context includes all the information that the thread requires to seamlessly continue its execution. This information includes the thread's set of processor registers and the call stack inside the address space of the host process.
+
+Python Multithreading
+
+https://www.geeksforgeeks.org/multithreading-in-python-set-2-synchronization/
+###########################
+threading module provides a Lock class to deal with the race conditions. Lock is implemented using a Semaphore object provided by the Operating System.
+
+
+Python's built-in structures are thread-safe for single operations, but it can sometimes be hard to see where a statement really becomes multiple operations.
+
+Your code should be safe. Keep in mind: a lock here will add almost no overhead, and will give you peace of mind.
+##################
+
+
+Parallelism consists of performing multiple operations at the same time. Multiprocessing is a means to effect parallelism, and it entails spreading tasks over a computer’s central processing units (CPUs, or cores). Multiprocessing is well-suited for CPU-bound tasks: tightly bound for loops and mathematical computations usually fall into this category.
+
+Concurrency is a slightly broader term than parallelism. It suggests that multiple tasks have the ability to run in an overlapping manner. (There’s a saying that concurrency does not imply parallelism.)
+
+Threading is a concurrent execution model whereby multiple threads take turns executing tasks. One process can contain multiple threads. Python has a complicated relationship with threading thanks to its GIL, but that’s beyond the scope of this article.
+
+--------------------------------------------
+
+
+Finally, here are a few advantages and disadvantages of multithreading:
+
+Advantages:
+
+It doesn’t block the user. This is because threads are independent of each other.
+Better use of system resources is possible since threads execute tasks parallely.
+Enhanced performance on multi-processor machines.
+Multi-threaded servers and interactive GUIs use multithreading exclusively.
+
+Disadvantages:
+As number of threads increase, complexity increases.
+Synchronization of shared resources (objects, data) is necessary.
+It is difficult to debug, result is sometimes unpredictable.
+Potential deadlocks which leads to starvation, i.e. some threads may not be served with a bad design
+Constructing and synchronizing threads is CPU/memory intensive.
+
+#######################################################
+
+
+

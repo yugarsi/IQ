@@ -1,0 +1,9 @@
+https://www.tutorialspoint.com/design_pattern/factory_pattern.htm
+
+1. Factory 
+
+1. interface which is Shape and has a function signature draw();
+3 classes triagle, circle, polygon, square implements the interface draw
+
+Factory class takes user inputs and returns shape based on user input.
+

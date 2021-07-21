@@ -1,0 +1,31 @@
+
+Both are 
+open data interchange options
+JSON is a language-independent data format
+
+
+JSON VS XML
+Javascript object Notation VS Extensible markup language 
+1. XML has display properties where as JSON doesn't
+2. XML doesn't have arrays JSON does
+https://www.educba.com/json-vs-xml/
+
+Less Verbose: JSON has a more compact style than XML, and it is often more readable. 
+The lightweight approach of JSON can make significant improvements in RESTful APIs working with complex systems.
+
+Faster: The XML software parsing process can take a long time. One reason for this problem is the DOM manipulation libraries that require more memory to handle large XML files. 
+JSON uses less data overall, so you reduce the cost and increase the parsing speed.
+
+Readable: The JSON structure is straightforward and readable. You have an easier time mapping to domain objects, no matter what programming language you're working with.
+
+Structure Matches the Data: JSON uses a map data structure rather than XML's tree. In some situations, key/value pairs can limit what you can do, but you get a predictable and easy-to-understand data model.
+Objects Align in Code: JSON objects and code objects match, which is beneficial when quickly creating domain objects in dynamic languages.
+
+JSON Limitations: The limitations in JSON actually end up being one of its biggest benefits. A common line of thought among developers is that
+
+" XML comes out on top because it supports modeling more objects. However, JSON's limitations simplify the code, add predictability and increase readability."
+
+
+The Alma REST APIs return JSON natively. This is the natural choice for developers working in dynamic languages, such as Node.js and Ruby. These languages interpret the JSON into native types, such as Array, Hash, String, and make it easy to manipulate data returned by the APIs.
+
+array, string, integer

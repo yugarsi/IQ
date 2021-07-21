@@ -1,0 +1,27 @@
+What is network security?
+1. confidentiality: only sender, intended receiver should
+“understand”
+message contents
+• sender encrypts message
+• receiver decrypts message
+
+2. authentication: sender, receiver want to confirm identity of
+each other
+
+3. message integrity: sender, receiver want to ensure message
+not altered (in transit, or afterwards) without detection
+access and 
+4. availability: services must be accessible and
+available to users
+
+----------------------------------------------
+
+8.5 Securing TCP connections: SSL
+8.6 Network layer security: IPsec
+8.7 Securing wireless LANs
+8.8 Operational security: firewalls and IDS
+
+--------------------------------------------------
+m plaintext message
+KA(m) ciphertext, encrypted with key KA
+m = KB(KA(m))

@@ -1,0 +1,21 @@
+Things to ASK?
+Web client or destop or mobile ?
+Permissions ?
+
+HA 99999 Availbility
+Owner id for sharding -- in google drive .. Three regions minimum.
+
+upload same data twice.. avoid. duplicate data.
+
+Garbage collection in the system.. how to get rid of data that has been deleted.
+
+Send last modified time that could be used to update everything eventually.
+
+
+HDFS --> Map reduce for 
+Hadoop data store -- (big data store, spark)
+Take a lot of data --> And then leards and finds recommendations 
+
+Netflix
+{userid : "UID1" , action: "pause" ,   videoId: V1 }. Map -> UID1 = [v1, pause, v2 , play] UID2: [v4, play, v1, pause].  REDUCE -----> UID1 --> recommend -> [V1, v2 , v3]
+Map --> And then apply Machine learning --> Reduce

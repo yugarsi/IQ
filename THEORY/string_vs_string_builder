@@ -1,0 +1,15 @@
+String vs string builder
+1. Mutability
+A String is immutable in Java, while a StringBuilder is mutable in Java. An immutable object is an object whose content cannot be changed after it is created.
+
+When we try to concatenate two Java strings, a new String object is created in the string pool. This can be demonstrated by comparing HashCode for String object after every concat operation.
+
+2. Equality
+We can use the equals() method for comparing two strings in Java since the String class overrides the equals() method of the Object class, while StringBuilder doesn’t override the equals() method of the Object class and hence equals() method cannot be used to compare two StringBuilder objects.
+
+5. Performance
+StringBuilder is speedy and consumes less memory than a string while performing concatenations. This is because string is immutable in Java, and concatenation of two string objects involves creating a new object.
+
+6. Length
+Since String is immutable, its length is fixed. But StringBuilder has the setLength() method, which can change the StringBuilder object to the specified length.
+

@@ -1,0 +1,46 @@
+1. Gathering System Requirements
+
+As with any systems design interview question, the first thing that we want to do is to gather system requirements; we need to figure out what system we're building exactly.
+
+We're designing the core user flow of the Google Drive web application. This consists of storing two main entities: folders and files. More specifically, the system should allow users to create folders, upload and download files, and rename and move entities once they're stored. We don't have to worry about ACLs, sharing entities, or any other auxiliary Google Drive features.
+
+We're going to be building this system at a very large scale, assuming 1 billion users, each with 15GB of data stored in Google Drive on average. This adds up to approximately 15,000 PB of data in total, without counting any metadata that we might store for each entity, like its name or its type.
+
+We need this service to be Highly Available and also very redundant. No data that's successfully stored in Google Drive can ever be lost, even through catastrophic failures in an entire region of the world.
+
+------------------------------------------------------------------------------
+2. Coming Up With A Plan
+It's important to organize ourselves and to lay out a clear plan regarding how we're going to tackle our design. What are the major, distinguishable components of our how system?
+
+First of all, we'll need to support the following operations:
+
+For Files
+
+UploadFile
+DownloadFile
+DeleteFile
+RenameFile
+MoveFile
+
+For Folders
+
+CreateFolder
+GetFolder
+DeleteFolder
+RenameFolder
+MoveFolder
+
+Secondly, we'll have to come up with a proper storage solution for two types of data:
+
+File Contents: The contents of the files uploaded to Google Drive. These are opaque bytes with no particular structure or format.
+
+Entity Info: The metadata for each entity. This might include fields like entityID, ownerID, lastModified, entityName, entityType. This list is non-exhaustive, and we'll most likely add to it later on.
+Let's start by going over the storage solutions that we want to use, and then we'll go through what happens when each of the operations outlined above is performed.
+
+
+
+BLOB storage and Key Value (Zookeeper , DynamoDB (has eventual consistency)) storage..
+
+When dealing with potentially very large uploads and data storage, it's often advantageous to split up data into blobs that can be pieced back together to form the original data. When uploading a file, the request will be load balanced across multiple servers that we'll call "blob splitters", and these blob splitters will have the job of splitting files into blobs and storing these blobs in some global blob-storage solution like GCS or S3 (since we're designing Google Drive, it might not be a great idea to pick S3 over GCS :P).
+
+
