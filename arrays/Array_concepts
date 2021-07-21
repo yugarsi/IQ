@@ -1,0 +1,6 @@
+Note That subarray and subsequence and subset are different
+
+subarray is like substring in string
+[1, 2, 3] = sub arrays are {1} {2} {3} {1, 2} {2,3} {1,2,3}  O(n^2) only continuous elements
+[1 ,2, 3] = {}, {1} {2} {3} {1,2} {1,3} {2,3} {1,2,3} = O(2^n) subsets
+[1, 2, 3] = 1, 3 can be a subsequence (spaced out but should be in order

@@ -1,0 +1,4 @@
+x = x xor y
+y = x xor y
+x = x xor y
+Xor in python is ^
